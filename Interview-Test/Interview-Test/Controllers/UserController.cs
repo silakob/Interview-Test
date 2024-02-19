@@ -1,4 +1,5 @@
-﻿using Interview_Test.Repositories;
+﻿using Interview_Test.Models;
+using Interview_Test.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Interview_Test.Controllers;
@@ -8,9 +9,13 @@ namespace Interview_Test.Controllers;
 public class UserController : ControllerBase
 {
     [HttpGet("GetUserById/{id}")]
-    public ActionResult GetUserById(string id)
+    public ActionResult<User> GetUserById(string id)
     {
-        //Todo: Implement this method
-        return Ok(Data.Users);
+        var user = Data._users.FirstOrDefault(u => u.Id == id);
+        if (user == null)
+        {
+            return NotFound();
+        }
+        return user;
     }
 }

@@ -97,7 +97,7 @@ public ActionResult GetUserById(string id)
 
 ```csharp
 [HttpPost("CreateUser")]
-public ActionResult GetUserById(UserModel user)
+public ActionResult CreateUser(UserModel user)
 {
     //Todo: Implement this method
     return Ok();
@@ -106,3 +106,16 @@ public ActionResult GetUserById(UserModel user)
 
 - Implement gateway configuration in `configurationOcelot.json` file by using library `Ocelot` 
 to  forward the client request to `Interview-Test.Api(https://localhost:44307)` with using the domain `https://localhost:44375/gateway`
+
+
+# Interview-Test.Client (Frontend Angular)
+
+- Implement screen Users List
+
+![Example Users List screen](../Interview-Test/Interview-Test.Client/src/assets/list.png)
+
+- Implement screen Users Detail 
+
+![Example Users Detail screen](../Interview-Test/Interview-Test.Client/src/assets/detail.png)
+
+- Connect data from API Gateway Ocelot.
